@@ -60,28 +60,31 @@
     <h1>RELATÓRIO DE EXPERIMENTO</h1>
 
     <div class="section">
-        <h2>Nome da Prática</h2>
-        <p>Nome_da_prática</p>
+        <h2>Semáforo</h2>
+        
     </div>
 
     <div class="section">
-        <h2>Sistemas de informação:</h2>
-        <p>Sistemas de Computação e de Informação</p>
+        <h2>Curso: Sistemas de informação:</h2>
+        <p>Diciplina: Sistemas de Computação e de Informação</p>
     </div>
 
     <div class="section">
         <h2>NOMES PARTICIPANTES/CURSO/PERÍODO:</h2>
-        <p>Elias Pires de Sousa Silva, João Vittor Procópio Período</p>
+        <p> Elias Pires de Sousa Silva
+            João Vittor Procópio Período        
+        
+        </p>
     </div>
 
     <div class="section">
         <h2>LABORATÓRIO:</h2>
-        <p>Nome do Laboratório</p>
+        <p>Sala C35</p>
     </div>
 
     <div class="section">
         <h2>DIA:</h2>
-        <p>Data do Experimento</p>
+        <p>Data do Experimento: 23/08/2024</p>
     </div>
 
     <div class="section">
@@ -103,12 +106,28 @@
 
     <div id="introducao" class="section">
         <h2>INTRODUÇÃO</h2>
-        <p>Texto da introdução aqui.</p>
+        <p>
+        Os semáforos são dispositivos essenciais na organização do trânsito urbano, garantindo a segurança de pedestres e veículos. 
+        Com o avanço da tecnologia, a automação desses sistemas tem se tornado mais acessível e versátil, especialmente com o uso de microcontroladores como o Arduino. 
+        Este trabalho apresenta o desenvolvimento de um semáforo utilizando o Arduino, abordando desde a montagem do circuito até a programação e funcionamento do sistema.
+        
+        
+        
+        </p>
     </div>
 
     <div id="objetivos" class="section">
         <h2>OBJETIVOS</h2>
-        <p>Texto dos objetivos aqui.</p>
+        <p>        
+        
+    O objetivo deste projeto é construir um semáforo utilizando um Arduino, com o intuito de:
+
+        Demonstrar o funcionamento básico de um semáforo de trânsito.
+        Desenvolver habilidades em eletrônica básica e programação em Arduino.
+        Aplicar conceitos de controle de tempo e sequenciamento de sinais luminosos.
+        
+        
+        </p>
     </div>
 
     <div id="materiais" class="section">
@@ -130,7 +149,43 @@ Computador com software Arduino IDE instalado</p>
     </div>
 
     <div id="codigo" class="section">
-        <h2>CÓDIGO FONTE</h2>
+        <h2>
+            CÓDIGO FONTE:
+
+    int vermelho = 8;
+    int amarelo = 9;
+    int verde = 10;
+
+  void setup(){
+
+  pinMode(vermelho, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop(){
+  
+  digitalWrite(vermelho, HIGH);
+  digitalWrite(amarelo, LOW);
+  digitalWrite(verde, LOW);
+  delay(5000);
+    
+  digitalWrite(vermelho, LOW);
+  digitalWrite(amarelo, LOW);
+  digitalWrite(verde, HIGH);
+  delay(3000);
+      
+  digitalWrite(vermelho, LOW);
+  digitalWrite(amarelo, HIGH);
+  digitalWrite(verde, LOW);
+  delay(1000);
+
+}
+        
+        
+        
+        
+        </h2>
         <pre><code>
 
 
@@ -146,27 +201,52 @@ void loop() {
 
     <div id="procedimentos" class="section">
         <h2>PROCEDIMENTOS</h2>
-        <p>Texto dos procedimentos aqui.</p>
+        <p>
+            1° Fizemos uma simulção pelo site tinkercad.com, 
+            2° Após finalizar a simulação vimos que ja poderiamos inicar o processo com os equipamentos! 
+            3° Utiliamos o Arduino IDE 2.3.2 para fazer a conexao com o arduino
+            4° Seguimos conforme a simulação, 
+            
+            
+        </p>
     </div>
 
     <div id="resultados" class="section">
         <h2>RESULTADOS</h2>
-        <p>Texto dos resultados aqui.</p>
+        <p>Após a montagem e programação, o semáforo funcionou conforme esperado. Os LEDs acenderam em uma sequência que simula um semáforo real</p>
     </div>
 
     <div id="discussao" class="section">
         <h2>DISCUSSÃO</h2>
-        <p>Texto da discussão aqui.</p>
+        <p>
+Os resultados indicam que o LED vermelho acendeu consistentemente por 5 segundos, seguido pelo verde por 3 segundos e, finalmente, o amarelo por 1 segundo, confirmando a operação correta do circuito como um semáforo básico. Esses resultados estão de acordo com a expectativa inicial, validando a hipótese de que o circuito funcionaria conforme projetado.
+
+Uma possível limitação observada durante o experimento foi a precisão do tempo de atraso. A função delay() pode não ser precisa o suficiente para aplicações em tempo real, especialmente em sistemas mais complexos. Um método mais preciso para controlar o tempo poderia ser a utilização de temporizadores de hardware.
+
+Apesar dessa limitação, o circuito demonstrou seu funcionamento básico como esperado. Para estudos futuros, seria interessante explorar o uso de outros componentes, como sensores de proximidade para simular a detecção de veículos, ou implementar temporizadores mais precisos para maior confiabilidade em sistemas reais de semáforos.
+
+Essa discussão ajuda a contextualizar seus resultados dentro de um quadro mais amplo, mostrando o que foi aprendido e o que poderia ser melhorado no futuro.
+
+
+            
+        </p>
     </div>
 
     <div id="conclusao" class="section">
         <h2>CONCLUSÃO</h2>
-        <p>Texto da conclusão aqui.</p>
+        <p>O desenvolvimento do semáforo com Arduino alcançou os objetivos propostos, mostrando como um microcontrolador pode ser usado para automatizar sinais de trânsito.
+        A execução do projeto proporcionou um aprendizado prático sobre eletrônica e programação, além de destacar a flexibilidade do Arduino em aplicações de controle.
+        
+        </p>
     </div>
 
     <div id="referencias" class="section">
         <h2>REFERÊNCIAS</h2>
-        <p>Texto das referências aqui.</p>
+        <p>
+            Aula Professor: Rodrigo Ferreira de Morais
+            Site: https://www.tinkercad.com/
+            Site: https://chatgpt.com/
+        </p>
     </div>
 
     <div id="fotos-videos" class="section">
